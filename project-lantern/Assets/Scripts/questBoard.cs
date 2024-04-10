@@ -25,13 +25,11 @@ public class questBoard : MonoBehaviour
     void Update()
     {
         if (playerInside) { 
-            if(Input.GetKeyUp(KeyCode.E)) { 
+            if(Input.GetButtonDown("Interact")) { 
                 if (!menuOpen) {
-                    Debug.Log("Opened menu!");
                     menuOpen=true;
                     playerController.inMenu = true;
                 } else {
-                    Debug.Log("Closed menu!");
                     menuOpen=false;
                     playerController.inMenu = false;
                 }

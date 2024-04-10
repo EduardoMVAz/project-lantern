@@ -29,13 +29,13 @@ public class PlayerController : MonoBehaviour {
 
         if (!inMenu) {
             if (Vector3.Distance(transform.position, movePoint.position) == 0.0f) {
-                if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) {
+                if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) >= 0.9f) {
                     if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, obstacleMask) && walked == false) {
                         Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0));
                         walked = true;
                         lighty.color = Color.red;
                     }
-                } else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
+                } else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) >= 0.9f) {
                     if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, obstacleMask) && walked==false) {
                         Move(new Vector3(0, Input.GetAxisRaw("Vertical"), 0));
                         walked = true;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
                 anim.SetBool("moving", true);
             }
 
-            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) != 1f && Mathf.Abs(Input.GetAxisRaw("Vertical")) != 1f) {
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) < 0.5f && Mathf.Abs(Input.GetAxisRaw("Vertical")) < 0.5f) {
                 walked = false;
                 lighty.color = Color.yellow;
             }
