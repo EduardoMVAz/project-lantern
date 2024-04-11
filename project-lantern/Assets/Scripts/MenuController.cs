@@ -8,6 +8,8 @@ public class MenuController : MonoBehaviour
     [SerializeField] private string start_scene;
     public void Start()
     {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(mainFirst);
     }
     public void Play()
     {   
