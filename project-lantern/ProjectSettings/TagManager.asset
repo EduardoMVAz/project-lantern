@@ -11,7 +11,7 @@ TagManager:
   - walls
   - Water
   - UI
-  - 
+  - roughGround
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: roughGround
+    uniqueID: 4225270327
+    locked: 0
+  - name: walls
+    uniqueID: 827862201
+    locked: 0
+  - name: skelly
+    uniqueID: 3521103241
     locked: 0
