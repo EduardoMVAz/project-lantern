@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
     private Light2D lighty;
     private Animator anim;
 
-    private bool canMove = false;
+    public bool canMove = false;
     private bool walked = false;
     private bool isDead = false;
     private bool won = false;
