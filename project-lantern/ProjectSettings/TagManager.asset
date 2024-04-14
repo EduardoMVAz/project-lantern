@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - roughGround
+  - goal
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - walls
   - Water
   - UI
-  - roughGround
+  - aboveGround
   - 
   - 
   - 
@@ -42,7 +43,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: roughGround
+  - name: aboveGround
     uniqueID: 4225270327
     locked: 0
   - name: walls

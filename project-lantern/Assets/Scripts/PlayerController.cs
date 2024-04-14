@@ -15,18 +15,19 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float speed = 3;
     [SerializeField] private Transform movePoint;
     [SerializeField] private LayerMask obstacleMask;
-
+    [SerializeField] private List<int> lightThresholds;
+    private int currentThreshold = 0;
     private Light2D lighty;
     private Animator anim;
 
     private bool canMove = false;
     private bool walked = false;
+    private bool isDead = false;
+    private bool won = false;
 
     private int moveAmount;
     private int moveAmountMax;
     private int moveCost = 1;
-    private int lightInnerRadiusDefault;
-    private int lightOuterRadiusDefault;
 
     void Start() {
         movePoint.parent = null; // Detach partent
@@ -37,9 +38,6 @@ public class PlayerController : MonoBehaviour {
         moveAmountMax = levelManager.GetComponent<LevelManager>().GetMoveAmount();
         moveAmount = moveAmountMax;
         SetRemainingLightText();
-        
-        lightInnerRadiusDefault = (int)lighty.pointLightInnerRadius;
-        lightOuterRadiusDefault = (int)lighty.pointLightOuterRadius;
     }
 
     void Update() {
@@ -48,32 +46,33 @@ public class PlayerController : MonoBehaviour {
             canMove = levelManager.GetComponent<LevelManager>().GetCanMove();
         }
 
+        if (inMenu || !canMove || isDead || won) {
+            return;
+        }
+
         float movementAmount = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, movementAmount);
 
-        if (!inMenu && canMove) {
-            if (Vector3.Distance(transform.position, movePoint.position) == 0.0f) {
-                if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) >= 0.9f) {
-                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, obstacleMask) && walked == false) {
-                        Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0));
-                        walked = true;
-                    }
-                } else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) >= 0.9f) {
-                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, obstacleMask) && walked==false) {
-                        Move(new Vector3(0, Input.GetAxisRaw("Vertical"), 0));
-                        walked = true;
-                    }
+        if (Vector3.Distance(transform.position, movePoint.position) == 0.0f) {
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) >= 0.9f) {
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, obstacleMask) && walked == false) {
+                    Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0));
+                    walked = true;
                 }
-                anim.SetBool("moving", false);
-            } else {
-                anim.SetBool("moving", true);
+            } else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) >= 0.9f) {
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, obstacleMask) && walked==false) {
+                    Move(new Vector3(0, Input.GetAxisRaw("Vertical"), 0));
+                    walked = true;
+                }
             }
+            anim.SetBool("moving", false);
+        } else {
+            anim.SetBool("moving", true);
+        }
 
-            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) < 0.5f && Mathf.Abs(Input.GetAxisRaw("Vertical")) < 0.5f) {
-                walked = false;
-            }
-
-        } // outside here would be while in-menu
+        if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) < 0.5f && Mathf.Abs(Input.GetAxisRaw("Vertical")) < 0.5f) {
+            walked = false;
+        }
     }
 
     private void Move(Vector3 direction) {
@@ -83,9 +82,13 @@ public class PlayerController : MonoBehaviour {
             moveAmount -= moveCost;
 
             // Update the light
-            if (moveAmount >= 0) {
+            if (moveAmount > 0) {
                 UpdateLight();
+            } else {
+                UpdateLight();
+                isDead = true;
             }
+
             SetRemainingLightText();
         }
     }
@@ -95,6 +98,9 @@ public class PlayerController : MonoBehaviour {
         if (other.tag.Equals("roughGround")) {
             moveCost = 2;
         }
+        if (other.tag.Equals("goal")) {
+            won = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
@@ -103,12 +109,22 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void UpdateLight() {
-        lighty.pointLightInnerRadius = lightInnerRadiusDefault * moveAmount/moveAmountMax;
-        lighty.pointLightOuterRadius = lightOuterRadiusDefault * moveAmount/moveAmountMax;
+    private void UpdateLight() { 
+        if (moveAmount < lightThresholds[currentThreshold] && currentThreshold < lightThresholds.Count) {
+            currentThreshold++;
+            lighty.pointLightOuterRadius -= 2;
+        }
     }
 
     private void SetRemainingLightText() {
         remainingLightText.text = "Remaining Light: " + moveAmount + " / " + moveAmountMax;
+    }
+
+    public bool GetIsDead() {
+        return isDead;
+    }
+
+    public bool GetWon() {
+        return won;
     }
 }

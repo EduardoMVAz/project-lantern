@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0bc5712dc1819d439f43316d232b57a
+guid: 07c999d7e77447a40a1c46feb2288356
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: floorTiles_0
+      name: goalTile_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c89d9c11e0d8e947af3c528564835b2
-      internalID: -1343286309
+      spriteID: ec097d4644878ef45b606fd12c84fb2f
+      internalID: -784502927
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      floorTiles_0: -1343286309
+      goalTile_0: -784502927
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
