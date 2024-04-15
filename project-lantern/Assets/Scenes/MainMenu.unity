@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c06d8e7c55d36842a1c7ebf1b935658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start_scene: SampleScene
+  start_scene: LevelSelect
   mainFirst: {fileID: 1088862291}
   settingsFirst: {fileID: 1372856238}
   settingsClose: {fileID: 26720013}

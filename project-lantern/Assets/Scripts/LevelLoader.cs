@@ -13,11 +13,11 @@ public class LevelLoader : MonoBehaviour
 
     void Start()
     {
-        level0.onClick.AddListener(() => ChangeLevelSelected("level0"));
-        level1.onClick.AddListener(() => ChangeLevelSelected("level1"));
-        level2.onClick.AddListener(() => ChangeLevelSelected("level2"));
-        level3.onClick.AddListener(() => ChangeLevelSelected("level3"));
-        level4.onClick.AddListener(() => ChangeLevelSelected("level4"));
+        level0.onClick.AddListener(() => ChangeLevelSelected("Level 0"));
+        level1.onClick.AddListener(() => ChangeLevelSelected("Level 1"));
+        level2.onClick.AddListener(() => ChangeLevelSelected("Level 2"));
+        level3.onClick.AddListener(() => ChangeLevelSelected("Level 3"));
+        level4.onClick.AddListener(() => ChangeLevelSelected("Level 4"));
     }
 
     void OnTriggerEnter2D(Collider2D other) {

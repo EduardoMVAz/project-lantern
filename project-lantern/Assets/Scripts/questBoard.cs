@@ -13,13 +13,13 @@ public class questBoard : MonoBehaviour
 
     private bool playerInside = false;
     private bool menuOpen = false;
-    private PlayerController playerController;
+    private PlayConLevelSelect playerController;
 
     void Start()
     {
         keyPopup.SetActive(false);
         questMenu.SetActive(false);
-        playerController = player.GetComponent<PlayerController>();
+        playerController = player.GetComponent<PlayConLevelSelect>();
     }
 
     // Update is called once per frame
