@@ -31,7 +31,6 @@ public class questBoard : MonoBehaviour
                     menuOpen = true;
                     playerController.inMenu = true;
                     EventSystem.current.SetSelectedGameObject(firstLevel);
-
                 }
             }
             if (Input.GetButtonDown("Cancel")) {
