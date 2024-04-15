@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering.Universal;
 
 public class questBoard : MonoBehaviour
@@ -8,8 +9,8 @@ public class questBoard : MonoBehaviour
     public GameObject keyPopup;
     public GameObject questMenu;
     public GameObject player;
+    public GameObject firstLevel;
 
-    private Light2D lighty;
     private bool playerInside = false;
     private bool menuOpen = false;
     private PlayerController playerController;
@@ -24,15 +25,19 @@ public class questBoard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInside) { 
-            if(Input.GetButtonDown("Interact")) { 
+        if (playerInside) {
+            if (Input.GetButtonDown("Interact")) {
                 if (!menuOpen) {
-                    menuOpen=true;
+                    menuOpen = true;
                     playerController.inMenu = true;
-                } else {
-                    menuOpen=false;
-                    playerController.inMenu = false;
+                    EventSystem.current.SetSelectedGameObject(firstLevel);
+
                 }
+            }
+            if (Input.GetButtonDown("Cancel")) {
+                menuOpen = false;
+                playerController.inMenu = false;
+                EventSystem.current.SetSelectedGameObject(null);
             }
         }
 
