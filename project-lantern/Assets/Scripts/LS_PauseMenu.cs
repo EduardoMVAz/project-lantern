@@ -1,26 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class LS_PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public Button resumeButton, menuButton, exitButton;
     public GameObject player;
 
     [SerializeField] private GameObject pauseFirst;
-    private PlayerController playerController;
+    private PlayConLevelSelect playerController;
     private bool paused;
 
     public void Start() {
         pauseMenu.SetActive(false);
-        playerController = player.GetComponent<PlayerController>();
+        playerController = player.GetComponent<PlayConLevelSelect>();
         resumeButton.onClick.AddListener(() => CloseMenu());
         menuButton.onClick.AddListener(() => LoadMenu());
         exitButton.onClick.AddListener(() => Exit());
