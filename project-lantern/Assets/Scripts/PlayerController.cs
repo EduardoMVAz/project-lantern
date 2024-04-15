@@ -89,6 +89,9 @@ public class PlayerController : MonoBehaviour {
                 isDead = true;
             }
 
+            // Update all enemies
+            levelManager.GetComponent<LevelManager>().MoveEnemies();
+
             SetRemainingLightText();
         }
     }

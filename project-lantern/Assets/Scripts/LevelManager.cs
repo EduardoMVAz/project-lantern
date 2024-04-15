@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject deadText;
     [SerializeField] private GameObject wonText;
     [SerializeField] private Light2D initialLight;
+    [SerializeField] private List<GameObject> enemies;
     private float initialLightCountdown = 5.0f;
     private bool canMove = false;
     private bool isDead = false;
@@ -54,6 +55,12 @@ public class LevelManager : MonoBehaviour
 
         if (won) {
             ManageVictory();
+        }
+    }
+
+    public void MoveEnemies() {
+        foreach (GameObject enemy in enemies) {
+            enemy.GetComponent<EnemyController>().SetIsMoving(true);
         }
     }
 
