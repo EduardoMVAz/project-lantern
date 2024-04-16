@@ -106,6 +106,14 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag.Equals("kabu") && !other.gameObject.GetComponent<KabuController>().GetIsHidden()) {
             isDead = true;
         }
+        if (other.gameObject.tag.Equals("extraLight")) {
+            moveAmount += 5;
+            if (moveAmount > moveAmountMax) {
+                moveAmount = moveAmountMax;
+            }
+            SetRemainingLightText();
+            Destroy(other.gameObject);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
