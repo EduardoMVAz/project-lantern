@@ -66,6 +66,6 @@ public class LevelManager : MonoBehaviour
     private void ManageVictory() {
         transitionTime -= Time.deltaTime;
         wonText.SetActive(true);
-        if (transitionTime < 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (transitionTime < 0) SceneManager.LoadScene("LevelSelect");
     }
 }
