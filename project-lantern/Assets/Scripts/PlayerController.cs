@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour {
                 deathCause = "light";
             }
 
-            // Update all enemies
+            levelManager.GetComponent<LevelManager>().ManageKabus();
             levelManager.GetComponent<LevelManager>().MoveEnemies();
 
             SetRemainingLightText();
@@ -103,9 +103,23 @@ public class PlayerController : MonoBehaviour {
         if (other.tag.Equals("roughGround")) {
             moveCost = 2;
         }
+      
         if (other.tag.Equals("goal")) {
             won = true;
         }
+      
+        if (other.gameObject.tag.Equals("kabu") && !other.gameObject.GetComponent<KabuController>().GetIsHidden()) {
+            isDead = true;
+        }
+      
+        if (other.gameObject.tag.Equals("extraLight")) {
+            moveAmount += 5;
+            if (moveAmount > moveAmountMax) {
+                moveAmount = moveAmountMax;
+            }
+            SetRemainingLightText();
+            Destroy(other.gameObject);
+          
         if (other.tag.Equals("enemy")) {
             isDead = true;
             deathCause = "enemy";

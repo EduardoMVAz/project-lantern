@@ -6,6 +6,8 @@ TagManager:
   tags:
   - roughGround
   - goal
+  - kabu
+  - extraLight
   - enemy
   layers:
   - Default
