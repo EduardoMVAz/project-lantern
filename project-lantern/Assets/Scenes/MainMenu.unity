@@ -1562,7 +1562,7 @@ MonoBehaviour:
   creditsClose: {fileID: 1069786890}
   pressSound: {fileID: 495373409}
   selectSound: {fileID: 1534604743}
-  backGroundMusic: {fileID: 0}
+  backGroundMusic: {fileID: 933720700}
   settingsMenu: {fileID: 1390988765}
   creditsMenu: {fileID: 0}
   audioMenu: {fileID: 363435905}

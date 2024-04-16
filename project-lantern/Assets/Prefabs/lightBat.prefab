@@ -47,8 +47,8 @@ GameObject:
   - component: {fileID: 6890948764865899764}
   - component: {fileID: 4251564003825034082}
   m_Layer: 0
-  m_Name: Enemy1
-  m_TagString: enemy
+  m_Name: lightBat
+  m_TagString: lightBat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 88bce19b3085aae49bea2535c32d1068, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcc425d8cff028c4e802b421a5a3f818, type: 3}
   m_Color: {r: 0.381132, g: 0.26391593, b: 0.26391593, a: 1}
   m_FlipX: 0
   m_FlipY: 0

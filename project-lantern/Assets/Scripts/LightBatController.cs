@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class LightBatController : MonoBehaviour
 {
     [SerializeField] private GameObject levelManager;
     //private Light2D lighty;

@@ -13,7 +13,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject deadText;
     [SerializeField] private GameObject wonText;
     [SerializeField] private Light2D initialLight;
-    [SerializeField] private List<GameObject> enemies;
     private float initialLightCountdown = 5.0f;
     private bool canMove = false;
     private bool isDead = false;
@@ -62,9 +61,8 @@ public class LevelManager : MonoBehaviour
     }
 
     public void MoveEnemies() {
-        foreach (GameObject enemy in enemies) {
-            enemy.GetComponent<EnemyController>().SetIsMoving(true);
-        }
+        ManageKabus();
+        ManageLightBats();
     }
 
     private void ManageDeath(string cause) {
@@ -89,6 +87,14 @@ public class LevelManager : MonoBehaviour
 
         foreach (GameObject kabu in prefabInstances) {
             kabu.GetComponent<KabuController>().ChangeState();
+        }
+    }
+
+    public void ManageLightBats() {
+        GameObject[] prefabInstances = GameObject.FindGameObjectsWithTag("lightBat");
+
+        foreach (GameObject lightbat in prefabInstances) {
+            lightbat.GetComponent<LightBatController>().SetIsMoving(true);
         }
     }
 }
