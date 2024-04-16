@@ -42713,7 +42713,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1255424471}
-  - component: {fileID: 1255424470}
   - component: {fileID: 1255424472}
   m_Layer: 0
   m_Name: pauseManager
@@ -42722,24 +42721,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1255424470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255424469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72adc56afa8935439fd6bff3f116fd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 9075958907641224058}
-  resumeButton: {fileID: 190345765512467574}
-  menuButton: {fileID: 4751162331275160326}
-  exitButton: {fileID: 4751162331275160326}
-  player: {fileID: 270225800}
-  pauseFirst: {fileID: 6819245751261260609}
 --- !u!4 &1255424471
 Transform:
   m_ObjectHideFlags: 0
@@ -44499,6 +44480,10 @@ PrefabInstance:
     - target: {fileID: 8918016250386076687, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918016250386076687, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

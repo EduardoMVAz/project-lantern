@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour {
     public bool canMove = false;
     private bool walked = false;
     private bool isDead = false;
+    private string deathCause;
     private bool won = false;
 
     private int moveAmount;
@@ -87,9 +88,11 @@ public class PlayerController : MonoBehaviour {
             } else {
                 UpdateLight();
                 isDead = true;
+                deathCause = "light";
             }
 
             levelManager.GetComponent<LevelManager>().ManageKabus();
+            levelManager.GetComponent<LevelManager>().MoveEnemies();
 
             SetRemainingLightText();
         }
@@ -100,12 +103,15 @@ public class PlayerController : MonoBehaviour {
         if (other.tag.Equals("roughGround")) {
             moveCost = 2;
         }
+      
         if (other.tag.Equals("goal")) {
             won = true;
         }
+      
         if (other.gameObject.tag.Equals("kabu") && !other.gameObject.GetComponent<KabuController>().GetIsHidden()) {
             isDead = true;
         }
+      
         if (other.gameObject.tag.Equals("extraLight")) {
             moveAmount += 5;
             if (moveAmount > moveAmountMax) {
@@ -113,6 +119,10 @@ public class PlayerController : MonoBehaviour {
             }
             SetRemainingLightText();
             Destroy(other.gameObject);
+          
+        if (other.tag.Equals("enemy")) {
+            isDead = true;
+            deathCause = "enemy";
         }
     }
 
@@ -123,7 +133,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void UpdateLight() { 
-        if (moveAmount < lightThresholds[currentThreshold] && currentThreshold < lightThresholds.Count) {
+        if (currentThreshold < lightThresholds.Count && moveAmount < lightThresholds[currentThreshold]) {
             currentThreshold++;
             lighty.pointLightOuterRadius -= 2;
         }
@@ -135,6 +145,10 @@ public class PlayerController : MonoBehaviour {
 
     public bool GetIsDead() {
         return isDead;
+    }
+
+    public string GetDeathCause() {
+        return deathCause;
     }
 
     public bool GetWon() {

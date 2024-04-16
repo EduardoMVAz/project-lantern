@@ -8,6 +8,7 @@ TagManager:
   - goal
   - kabu
   - extraLight
+  - enemy
   layers:
   - Default
   - TransparentFX
