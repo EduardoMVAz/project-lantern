@@ -6,6 +6,7 @@ TagManager:
   tags:
   - roughGround
   - goal
+  - enemy
   layers:
   - Default
   - TransparentFX

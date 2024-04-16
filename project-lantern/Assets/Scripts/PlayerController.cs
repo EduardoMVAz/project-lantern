@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour {
     public bool canMove = false;
     private bool walked = false;
     private bool isDead = false;
+    private string deathCause;
     private bool won = false;
 
     private int moveAmount;
@@ -87,7 +88,11 @@ public class PlayerController : MonoBehaviour {
             } else {
                 UpdateLight();
                 isDead = true;
+                deathCause = "light";
             }
+
+            // Update all enemies
+            levelManager.GetComponent<LevelManager>().MoveEnemies();
 
             SetRemainingLightText();
         }
@@ -101,6 +106,10 @@ public class PlayerController : MonoBehaviour {
         if (other.tag.Equals("goal")) {
             won = true;
         }
+        if (other.tag.Equals("enemy")) {
+            isDead = true;
+            deathCause = "enemy";
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
@@ -110,7 +119,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void UpdateLight() { 
-        if (moveAmount < lightThresholds[currentThreshold] && currentThreshold < lightThresholds.Count) {
+        if (currentThreshold < lightThresholds.Count && moveAmount < lightThresholds[currentThreshold]) {
             currentThreshold++;
             lighty.pointLightOuterRadius -= 2;
         }
@@ -122,6 +131,10 @@ public class PlayerController : MonoBehaviour {
 
     public bool GetIsDead() {
         return isDead;
+    }
+
+    public string GetDeathCause() {
+        return deathCause;
     }
 
     public bool GetWon() {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject deadText;
     [SerializeField] private GameObject wonText;
     [SerializeField] private Light2D initialLight;
+    [SerializeField] private List<GameObject> enemies;
     private float initialLightCountdown = 5.0f;
     private bool canMove = false;
     private bool isDead = false;
+    private string deathCause;
     private bool won = false;
     private float transitionTime = 2;
 
@@ -41,6 +44,7 @@ public class LevelManager : MonoBehaviour
 
         if (!isDead) {
             isDead = player.GetComponent<PlayerController>().GetIsDead();
+            deathCause = player.GetComponent<PlayerController>().GetDeathCause();
         }
 
         if (!won) {
@@ -49,7 +53,7 @@ public class LevelManager : MonoBehaviour
 
         // Game end 
         if (isDead) {
-            ManageDeath();
+            ManageDeath(deathCause);
         }
 
         if (won) {
@@ -57,8 +61,19 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void ManageDeath() {
+    public void MoveEnemies() {
+        foreach (GameObject enemy in enemies) {
+            enemy.GetComponent<EnemyController>().SetIsMoving(true);
+        }
+    }
+
+    private void ManageDeath(string cause) {
         transitionTime -= Time.deltaTime;
+        if (cause.Equals("enemy")) {
+            deadText.GetComponent<TextMeshProUGUI>().text = "You Lost your Light...";
+        } else if (cause.Equals("light")) {
+            deadText.GetComponent<TextMeshProUGUI>().text = "You Ran out of Light...";
+        }
         deadText.SetActive(true);
         if (transitionTime < 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
