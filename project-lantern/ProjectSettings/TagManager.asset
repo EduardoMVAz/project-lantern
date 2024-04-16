@@ -6,6 +6,7 @@ TagManager:
   tags:
   - roughGround
   - goal
+  - kabu
   layers:
   - Default
   - TransparentFX

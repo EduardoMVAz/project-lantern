@@ -68,4 +68,12 @@ public class LevelManager : MonoBehaviour
         wonText.SetActive(true);
         if (transitionTime < 0) SceneManager.LoadScene("LevelSelect");
     }
+
+    public void ManageKabus() {
+        GameObject[] prefabInstances = GameObject.FindGameObjectsWithTag("kabu");
+
+        foreach (GameObject kabu in prefabInstances) {
+            kabu.GetComponent<KabuController>().ChangeState();
+        }
+    }
 }

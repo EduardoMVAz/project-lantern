@@ -89,6 +89,8 @@ public class PlayerController : MonoBehaviour {
                 isDead = true;
             }
 
+            levelManager.GetComponent<LevelManager>().ManageKabus();
+
             SetRemainingLightText();
         }
     }
@@ -100,6 +102,9 @@ public class PlayerController : MonoBehaviour {
         }
         if (other.tag.Equals("goal")) {
             won = true;
+        }
+        if (other.gameObject.tag.Equals("kabu") && !other.gameObject.GetComponent<KabuController>().GetIsHidden()) {
+            isDead = true;
         }
     }
 
