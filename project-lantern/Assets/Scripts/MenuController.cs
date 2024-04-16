@@ -35,7 +35,7 @@ public class MenuController : MonoBehaviour
     {    
         selectSound.Stop();
         pressSound.Play();
-        Wait(2);
+        Wait(1);
         SceneManager.LoadScene(start_scene);
     }
     public IEnumerator Wait(int n) {
