@@ -155,4 +155,8 @@ public class PlayerController : MonoBehaviour {
     public bool GetWon() {
         return won;
     }
+
+    public int GetMoveAmount() {
+        return moveAmount;
+    }
 }

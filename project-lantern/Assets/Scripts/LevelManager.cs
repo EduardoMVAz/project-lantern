@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject deadText;
     [SerializeField] private GameObject wonText;
     [SerializeField] private Light2D initialLight;
+    [SerializeField] private int perfection;
     private float initialLightCountdown = 5.0f;
     private bool canMove = false;
     private bool isDead = false;
@@ -79,6 +80,11 @@ public class LevelManager : MonoBehaviour
     private void ManageVictory() {
         transitionTime -= Time.deltaTime;
         wonText.SetActive(true);
+        if (player.GetComponent<PlayerController>().GetMoveAmount() >= perfection) {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 2); // perfection!
+        } else if (PlayerPrefs.GetInt(SceneManager.GetActiveScene().name, 0) <= 1) {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1); // you beat it :D
+        }
         if (transitionTime < 0) SceneManager.LoadScene("LevelSelect");
     }
 

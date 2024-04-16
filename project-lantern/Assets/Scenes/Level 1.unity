@@ -212,6 +212,7 @@ MonoBehaviour:
   deadText: {fileID: 1442402454}
   wonText: {fileID: 1429684873}
   initialLight: {fileID: 336611405}
+  perfection: 9
 --- !u!4 &144582328
 Transform:
   m_ObjectHideFlags: 0
