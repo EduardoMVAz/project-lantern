@@ -24,8 +24,10 @@ public class LS_PauseMenu : MonoBehaviour
     }
 
     public void Update() {
-        if (Input.GetButtonDown("Cancel")) {
-            if (paused) {
+        if (Input.GetButtonDown("Cancel") ) {
+            if (playerController.inMenu == true && paused == false) {
+                // huh, the player was in the quest menu then!
+            } else if (paused) {
                 CloseMenu();
             } else {
                 playerController.inMenu = true;
