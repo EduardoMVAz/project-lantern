@@ -7864,6 +7864,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1031817991457645874, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2424754462347971303, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
       propertyPath: m_Name
       value: skelly2
@@ -7880,6 +7884,26 @@ PrefabInstance:
       propertyPath: remainingLightText
       value: 
       objectReference: {fileID: 234928298}
+    - target: {fileID: 2596704160348946164, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
+      propertyPath: lightThresholds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596704160348946164, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
+      propertyPath: lightThresholds.Array.data[0]
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596704160348946164, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
+      propertyPath: lightThresholds.Array.data[1]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596704160348946164, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
+      propertyPath: lightThresholds.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596704160348946164, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
+      propertyPath: lightThresholds.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7942934011917783023, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
