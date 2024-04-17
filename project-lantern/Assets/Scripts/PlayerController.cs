@@ -122,11 +122,13 @@ public class PlayerController : MonoBehaviour {
         if (other.tag.Equals("lightBat")) {
             isDead = true;
             deathCause = "enemy";
+            lighty.pointLightOuterRadius = 0;
         }
 
         if (other.gameObject.tag.Equals("kabu") && !other.gameObject.GetComponent<KabuController>().GetIsHidden()) {
             isDead = true;
             deathCause = "enemy";
+            lighty.pointLightOuterRadius = 0;
         }
     }
 
