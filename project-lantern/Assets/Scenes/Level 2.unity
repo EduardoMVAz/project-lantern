@@ -6017,6 +6017,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1081000135 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3448937999843535309, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
+  m_PrefabInstance: {fileID: 1081000130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1136742576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8918016250386076687, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
@@ -8292,6 +8303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1136742576}
   resumeButton: {fileID: 1081000134}
+  levelSelectButton: {fileID: 1081000135}
   menuButton: {fileID: 1081000133}
   exitButton: {fileID: 1081000132}
   player: {fileID: 91617125}

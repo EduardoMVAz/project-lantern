@@ -380,6 +380,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 893539185097057145, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
   m_PrefabInstance: {fileID: 1781972763}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &263998544 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3448937999843535309, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
+  m_PrefabInstance: {fileID: 1781972763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &286184564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8663,6 +8674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1781972768}
   resumeButton: {fileID: 1781972766}
+  levelSelectButton: {fileID: 263998544}
   menuButton: {fileID: 1781972765}
   exitButton: {fileID: 1781972764}
   player: {fileID: 1875467550}

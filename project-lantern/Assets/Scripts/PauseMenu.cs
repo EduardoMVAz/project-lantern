@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public Button resumeButton, menuButton, exitButton;
+    public Button resumeButton, levelSelectButton, menuButton, exitButton;
     public GameObject player;
 
     [SerializeField] private GameObject pauseFirst;
@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         playerController = player.GetComponent<PlayerController>();
         resumeButton.onClick.AddListener(() => CloseMenu());
+        levelSelectButton.onClick.AddListener(() => LoadLevelSelect());
         menuButton.onClick.AddListener(() => LoadMenu());
         exitButton.onClick.AddListener(() => Exit());
     }
@@ -44,6 +45,10 @@ public class PauseMenu : MonoBehaviour
         playerController.inMenu = false;
         pauseMenu.SetActive(false);
         paused = false;
+    }
+
+    public void LoadLevelSelect() {
+        SceneManager.LoadScene("LevelSelect");
     }
 
     public void LoadMenu() {
