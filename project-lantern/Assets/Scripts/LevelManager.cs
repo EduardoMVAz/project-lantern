@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
     {
         // Initial Light shenanigans
         if (initialLightCountdown > 0) {
-            initialLightCountdown -= Time.deltaTime;
+            initialLightCountdown -= Time.deltaTime*5;
             initialLight.intensity = initialLightCountdown / 10;
         }
         if (initialLightCountdown <= 0 && !canMove) {
@@ -42,11 +42,11 @@ public class LevelManager : MonoBehaviour
             canMove = true;
         }
 
+        // updates statuses dead and won
         if (!isDead) {
             isDead = player.GetComponent<PlayerController>().GetIsDead();
             deathCause = player.GetComponent<PlayerController>().GetDeathCause();
         }
-
         if (!won) {
             won = player.GetComponent<PlayerController>().GetWon();
         }
@@ -55,7 +55,6 @@ public class LevelManager : MonoBehaviour
         if (isDead) {
             ManageDeath(deathCause);
         }
-
         if (won) {
             ManageVictory();
         }

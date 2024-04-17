@@ -4,6 +4,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private Transform movePoint;
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] private List<int> lightThresholds;
+    [SerializeField] private Sprite[] bigLanterns;
+    [SerializeField] private GameObject bigLantern;
     private int currentThreshold = 0;
     private Light2D lighty;
     private Animator anim;
@@ -141,7 +144,11 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void SetRemainingLightText() {
-        remainingLightText.text = "Remaining Light: " + moveAmount + " / " + moveAmountMax;
+        // updates the sprite
+        int index = (int) Mathf.Floor((moveAmountMax - moveAmount) / (moveAmountMax/4));
+        bigLantern.GetComponent<Image>().sprite = bigLanterns[index];
+        // updates text
+        remainingLightText.text = moveAmount.ToString();
     }
 
     public bool GetIsDead() {

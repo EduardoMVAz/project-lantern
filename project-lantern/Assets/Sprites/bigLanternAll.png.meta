@@ -124,7 +124,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caf4a0bb02a198c478a86df01957b269
+      spriteID: abd893335c374a54f9a544e50eb69d8b
       internalID: 579155582
       vertices: []
       indices: 
@@ -145,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30db035db7e604b4895aa1f015ae434b
+      spriteID: 8b309dd036bfa2b4bbf81c4f25c7a7ae
       internalID: -1482561931
       vertices: []
       indices: 
@@ -166,7 +166,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03867150f3a7f394089a3df3a0584929
+      spriteID: 57998e0a8c59dcc4f8a5b6a2936bc01d
       internalID: 712832685
       vertices: []
       indices: 
@@ -187,8 +187,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 536156e829fc0a9428b9acdae154d324
+      spriteID: a32ab532883848742b2efc6f127fef24
       internalID: 1081395743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigLanternAll_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61e11f43313b6f4da87ac0b10f670fe
+      internalID: 29340428
       vertices: []
       indices: 
       edges: []
@@ -208,6 +229,7 @@ TextureImporter:
       bigLanternAll_1: -1482561931
       bigLanternAll_2: 712832685
       bigLanternAll_3: 1081395743
+      bigLanternAll_4: 29340428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
