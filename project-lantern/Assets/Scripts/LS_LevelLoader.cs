@@ -43,5 +43,8 @@ public class LevelLoader : MonoBehaviour
         lighty.enabled = true;
         levelSelected = newLevel;
         levelText.text = newLevel;
+        if (levelText.text == "Level 0") {
+            levelText.text = "Tutorial";
+        }
     }
 }
