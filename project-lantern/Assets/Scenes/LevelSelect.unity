@@ -16308,7 +16308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &799174689
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16677,7 +16677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Quest menu (* ^ \u03C9 ^)"
+  m_text: Choose your quest
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b6375afe9749c344b0ef6bc1761c791, type: 2}
   m_sharedMaterial: {fileID: -6169976907669013184, guid: 0b6375afe9749c344b0ef6bc1761c791, type: 2}
@@ -42169,7 +42169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.2, y: 30.6}
+  m_AnchoredPosition: {x: -24.7, y: 30.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1160317619
@@ -44563,7 +44563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8918016250386076687, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
