@@ -10,7 +10,7 @@ using static Unity.Collections.AllocatorManager;
 
 public class LevelLoader : MonoBehaviour
 {
-    public Button level1, level2, level3, level4, level5, level6, level7, level8, level9, level10;
+    public Button[] levelButtons;
     public TextMeshProUGUI levelText;
     public GameObject blocker;
 
@@ -23,16 +23,10 @@ public class LevelLoader : MonoBehaviour
         lighty.enabled = false;
         blocker.SetActive(true);
 
-        level1.onClick.AddListener(() => ChangeLevelSelected("Level 1"));
-        level2.onClick.AddListener(() => ChangeLevelSelected("Level 2"));
-        level3.onClick.AddListener(() => ChangeLevelSelected("Level 3"));
-        level4.onClick.AddListener(() => ChangeLevelSelected("Level 4"));
-        level5.onClick.AddListener(() => ChangeLevelSelected("Level 5"));
-        level6.onClick.AddListener(() => ChangeLevelSelected("Level 6"));
-        level7.onClick.AddListener(() => ChangeLevelSelected("Level 7"));
-        level8.onClick.AddListener(() => ChangeLevelSelected("Level 8"));
-        level9.onClick.AddListener(() => ChangeLevelSelected("Level 9"));
-        level10.onClick.AddListener(() => ChangeLevelSelected("Level 10"));
+        for (int i = 0; i < levelButtons.Length; i++) {
+            string temp = "Level " + (i + 1).ToString();
+            levelButtons[i].onClick.AddListener(() => ChangeLevelSelected(temp));
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
