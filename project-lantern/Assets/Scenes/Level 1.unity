@@ -386,6 +386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 8918016250386076687, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -714,7 +718,7 @@ GameObject:
   - component: {fileID: 538802174}
   - component: {fileID: 538802173}
   m_Layer: 0
-  m_Name: paueManager
+  m_Name: pauseManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7793,11 +7797,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4554831647437481840, guid: 75b0796f960181343a4ae72a70b3bcab, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 172.7672
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4554831647437481840, guid: 75b0796f960181343a4ae72a70b3bcab, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 172.7672
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4554831647437481840, guid: 75b0796f960181343a4ae72a70b3bcab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7829,11 +7833,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4554831647437481840, guid: 75b0796f960181343a4ae72a70b3bcab, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -823.61646
+      value: -830
       objectReference: {fileID: 0}
     - target: {fileID: 4554831647437481840, guid: 75b0796f960181343a4ae72a70b3bcab, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 423.61646
+      value: 410
       objectReference: {fileID: 0}
     - target: {fileID: 4554831647437481840, guid: 75b0796f960181343a4ae72a70b3bcab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7926,11 +7930,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 220789599}
   - {fileID: 144582328}
+  - {fileID: 538802174}
+  - {fileID: 742561931}
   - {fileID: 336611406}
   - {fileID: 4607001530494032628}
+  - {fileID: 220789599}
   - {fileID: 376461064}
   - {fileID: 865646221}
-  - {fileID: 742561931}
-  - {fileID: 538802174}

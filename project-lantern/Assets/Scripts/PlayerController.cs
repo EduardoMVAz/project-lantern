@@ -145,9 +145,9 @@ public class PlayerController : MonoBehaviour {
 
     private void SetRemainingLightText() {
         // updates the sprite
-        int index = (int) Mathf.Floor((moveAmountMax - moveAmount) / (moveAmountMax/4));
-        bigLantern.GetComponent<Image>().sprite = bigLanterns[index];
+        bigLantern.GetComponent<Image>().sprite = bigLanterns[currentThreshold];
         // updates text
+        if (moveAmount < 0) moveAmount = 0;
         remainingLightText.text = moveAmount.ToString();
     }
 
