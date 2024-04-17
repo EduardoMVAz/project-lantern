@@ -13206,12 +13206,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590c4ce37701f8645940bcf521beb78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAmount: 100
+  moveAmount: 80
   player: {fileID: 633389289}
   deadText: {fileID: 1804297267}
   wonText: {fileID: 1223631439}
   initialLight: {fileID: 2095526066}
-  perfection: 0
+  perfection: 30
 --- !u!4 &2100414292
 Transform:
   m_ObjectHideFlags: 0

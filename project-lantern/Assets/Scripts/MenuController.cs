@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private AudioSource pressSound, selectSound, backGroundMusic;
     
     [Header("Secondary Menu")]
-    [SerializeField] private GameObject settingsMenu, creditsMenu;
+    [SerializeField] private GameObject settingsMenu, creditsTab;
     
     [Header("Audio Menu")]
     [SerializeField] private GameObject  audioMenu;
@@ -91,6 +91,22 @@ public class MenuController : MonoBehaviour
         audioMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(audioClose);
+    }
+
+    public void OpenCredits() {
+        selectSound.Stop();
+        pressSound.Play();
+        creditsTab.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(creditsFirst);
+    }
+
+    public void CloseCredits() {
+        selectSound.Stop();
+        pressSound.Play();
+        creditsTab.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(creditsClose);
     }
 
     // 

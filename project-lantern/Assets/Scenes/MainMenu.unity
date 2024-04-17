@@ -1584,7 +1584,7 @@ MonoBehaviour:
   selectSound: {fileID: 1534604743}
   backGroundMusic: {fileID: 933720700}
   settingsMenu: {fileID: 1390988765}
-  creditsMenu: {fileID: 0}
+  creditsTab: {fileID: 0}
   audioMenu: {fileID: 363435905}
   audioFirst: {fileID: 1307111797}
   audioClose: {fileID: 824486237}
@@ -2451,7 +2451,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 26720017}
+    m_SelectOnUp: {fileID: 1768027285}
     m_SelectOnDown: {fileID: 716453513}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -3642,20 +3642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1595722517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543972503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daec59215ebe2114d8de80de4f60ec01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectSound: {fileID: 0}
-  pressSound: {fileID: 0}
 --- !u!114 &1595722518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4170,7 +4156,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1088862295}
-    m_SelectOnDown: {fileID: 26720017}
+    m_SelectOnDown: {fileID: 1069786894}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -4590,9 +4576,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2848930067940843665, guid: 65e2923cd21e31643a5b66181dcc974f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1595722518}
-    - targetCorrespondingSourceObject: {fileID: 2848930067940843665, guid: 65e2923cd21e31643a5b66181dcc974f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1595722517}
   m_SourcePrefab: {fileID: 100100000, guid: 65e2923cd21e31643a5b66181dcc974f, type: 3}
 --- !u!1001 &7179811293537144959
 PrefabInstance:
