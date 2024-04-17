@@ -10,6 +10,7 @@ public class questBoard : MonoBehaviour
     public GameObject questMenu;
     public GameObject player;
     public GameObject firstLevel;
+    public GameObject littleSkelly;
 
     private bool playerInside = false;
     private bool menuOpen = false;
@@ -37,6 +38,9 @@ public class questBoard : MonoBehaviour
                 menuOpen = false;
                 playerController.inMenu = false;
                 EventSystem.current.SetSelectedGameObject(null);
+            }
+            if (EventSystem.current.currentSelectedGameObject != null) {
+                littleSkelly.transform.position = EventSystem.current.currentSelectedGameObject.transform.position;
             }
         }
 
