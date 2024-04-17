@@ -16,6 +16,7 @@ public class questBoard : MonoBehaviour
     private bool menuOpen = false;
     private PlayConLevelSelect playerController;
 
+    [SerializeField] private AudioSource selectSound;
     void Start()
     {
         keyPopup.SetActive(false);
@@ -39,6 +40,10 @@ public class questBoard : MonoBehaviour
                 playerController.inMenu = false;
                 EventSystem.current.SetSelectedGameObject(null);
             }
+            if (Input.GetButtonDown("Horizontal")) {
+                selectSound.Play();
+            }
+            
             if (EventSystem.current.currentSelectedGameObject != null) {
                 littleSkelly.transform.position = EventSystem.current.currentSelectedGameObject.transform.position;
             }
