@@ -31,6 +31,19 @@ public class MenuController : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(mainFirst);
     }
+
+    public void NewPlay() {
+        selectSound.Stop();
+        pressSound.Play();
+        Debug.Log("awawawawa");
+        for (int i = 0; i <= 10; i++) {
+            string levelName = "Level " + i.ToString();
+            PlayerPrefs.SetInt(levelName, 0);
+            Debug.Log(levelName);
+        }
+        Wait(1);
+        SceneManager.LoadScene(start_scene);
+    }
     public void Play()
     {    
         selectSound.Stop();

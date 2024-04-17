@@ -33,7 +33,7 @@ public class questBoard : MonoBehaviour
                     EventSystem.current.SetSelectedGameObject(firstLevel);
                 }
             }
-            if (Input.GetButtonDown("Cancel")) {
+            if (Input.GetButtonDown("Cancel") && menuOpen == true) {
                 menuOpen = false;
                 playerController.inMenu = false;
                 EventSystem.current.SetSelectedGameObject(null);

@@ -217,6 +217,7 @@ MonoBehaviour:
   deadText: {fileID: 1442402454}
   wonText: {fileID: 1429684873}
   initialLight: {fileID: 336611405}
+  perfection: 0
 --- !u!4 &144582328
 Transform:
   m_ObjectHideFlags: 0
@@ -448,7 +449,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 234928297}
+  - {fileID: 1443049053}
   - {fileID: 1442402455}
   - {fileID: 1429684874}
   m_Father: {fileID: 0}
@@ -9047,8 +9048,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2596704160348946164, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
       propertyPath: speed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2596704160348946164, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
+      propertyPath: bigLantern
+      value: 
+      objectReference: {fileID: 1443049052}
     - target: {fileID: 2596704160348946164, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
       propertyPath: levelManager
       value: 
@@ -9056,7 +9061,7 @@ PrefabInstance:
     - target: {fileID: 2596704160348946164, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
       propertyPath: remainingLightText
       value: 
-      objectReference: {fileID: 234928298}
+      objectReference: {fileID: 1443049054}
     - target: {fileID: 2596704160348946164, guid: 1402e537a533ced4e8b0729cd522b6fb, type: 3}
       propertyPath: lightThresholds.Array.size
       value: 1
@@ -9143,11 +9148,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 220789599}
   - {fileID: 144582328}
   - {fileID: 336611406}
   - {fileID: 4607001530494032628}
   - {fileID: 376461064}
   - {fileID: 865646221}
-  - {fileID: 220789599}
   - {fileID: 742561931}
   - {fileID: 1937185392}
