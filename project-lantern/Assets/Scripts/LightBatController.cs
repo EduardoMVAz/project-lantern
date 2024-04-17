@@ -53,4 +53,11 @@ public class LightBatController : MonoBehaviour
     public void SetIsMoving(bool state) {
         isMoving = state;
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "kabu" && !other.gameObject.GetComponent<KabuController>().GetIsHidden()) {
+            // if the light bat collides with the kabu, the light bat will be hidden
+            this.gameObject.SetActive(false);
+        }
+    }
 }
