@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour {
     public bool inMenu;
 
     [SerializeField] private GameObject levelManager;
-
     [SerializeField] private TextMeshProUGUI remainingLightText;
     [SerializeField] private float speed = 3;
+    [SerializeField] private int initialLight;
     [SerializeField] private Transform movePoint;
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] private List<int> lightThresholds;
@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour {
             if (moveAmount > moveAmountMax) {
                 moveAmount = moveAmountMax;
             }
-            SetRemainingLightText();
+            ResetLight();
             Destroy(other.gameObject);
         }
 
@@ -141,6 +141,19 @@ public class PlayerController : MonoBehaviour {
             currentThreshold++;
             lighty.pointLightOuterRadius -= 2;
         }
+    }
+
+    private void ResetLight() {
+        currentThreshold = 0;
+        lighty.pointLightOuterRadius = initialLight;
+
+        for (int i = 0; i < lightThresholds.Count; i++) {
+            if (lightThresholds[i] > moveAmount) {
+                currentThreshold++;
+                lighty.pointLightOuterRadius -= 2;
+            }
+        }
+        SetRemainingLightText();
     }
 
     private void SetRemainingLightText() {
