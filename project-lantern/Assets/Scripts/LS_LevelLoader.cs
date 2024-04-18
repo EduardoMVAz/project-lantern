@@ -17,6 +17,8 @@ public class LevelLoader : MonoBehaviour
     private string levelSelected = "locked";
     private Light2D lighty;
 
+    [SerializeField] private AudioSource pressSound;
+
     void Start()
     {
         lighty = GetComponent<Light2D>();
@@ -36,6 +38,8 @@ public class LevelLoader : MonoBehaviour
     }
 
     void ChangeLevelSelected(string newLevel) {
+        pressSound.Stop();
+        pressSound.Play();
         lighty.enabled = true;
         blocker.SetActive(false);
         levelSelected = newLevel;
