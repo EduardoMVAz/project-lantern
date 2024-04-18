@@ -10,7 +10,9 @@ public class LevelManager : MonoBehaviour
     
     [SerializeField] private int moveAmount;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject deadText;
+    [SerializeField] private GameObject backgroundImg;
+    [SerializeField] private GameObject outOfLightImg;
+    [SerializeField] private GameObject lostLightImg;
     [SerializeField] private GameObject wonText;
     [SerializeField] private Light2D initialLight;
     [SerializeField] private int perfection;
@@ -68,11 +70,12 @@ public class LevelManager : MonoBehaviour
     private void ManageDeath(string cause) {
         transitionTime -= Time.deltaTime;
         if (cause.Equals("enemy")) {
-            deadText.GetComponent<TextMeshProUGUI>().text = "You Lost your Light...";
+            lostLightImg.SetActive(true);
+            backgroundImg.SetActive(true);
         } else if (cause.Equals("light")) {
-            deadText.GetComponent<TextMeshProUGUI>().text = "You Ran out of Light...";
+            outOfLightImg.SetActive(true);
+            backgroundImg.SetActive(true);
         }
-        deadText.SetActive(true);
         if (transitionTime < 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
