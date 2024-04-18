@@ -46447,11 +46447,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 9075958907641224058}
-  resumeButton: {fileID: 190345765512467574}
+  resumeButton: {fileID: 1797331161}
   menuButton: {fileID: 4751162331275160326}
   exitButton: {fileID: 5606622103935821602}
   player: {fileID: 2424754461821384781}
-  pauseFirst: {fileID: 6819245751261260609}
+  pauseFirst: {fileID: 1797331160}
 --- !u!1 &1267250900
 GameObject:
   m_ObjectHideFlags: 0
@@ -49716,6 +49716,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 2}
   m_EdgeRadius: 0
+--- !u!1 &1797331160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5275791018024674323, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
+  m_PrefabInstance: {fileID: 447932299255943029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1797331161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3448937999843535309, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
+  m_PrefabInstance: {fileID: 447932299255943029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797331160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1798797701
 GameObject:
   m_ObjectHideFlags: 0
@@ -50169,7 +50185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9fcbbfdfa5ffff8439b21f944e4216e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df139e99bead4544bbdfc67329749a0f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -50857,17 +50873,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &190345765512467574 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 329711078312106755, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
-  m_PrefabInstance: {fileID: 447932299255943029}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6819245751261260609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &447932299255943029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50876,6 +50881,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1203559982}
     m_Modifications:
+    - target: {fileID: 466009059783785205, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
+      propertyPath: m_text
+      value: 'Resume
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 893539185097057145, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -50956,6 +50967,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3448937999843535309, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 5606622103935821602}
+    - target: {fileID: 5275791018024674323, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
+      propertyPath: m_Name
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474645504692430935, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 1797331161}
     - target: {fileID: 8918016250386076687, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -50965,7 +50988,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6383205873272480820, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
@@ -55990,11 +56014,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!1 &6819245751261260609 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6383205873272480820, guid: 69278be123bf77344a0c9f88e46154b6, type: 3}
-  m_PrefabInstance: {fileID: 447932299255943029}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &7792504625917724688
 SpriteRenderer:
   m_ObjectHideFlags: 0
