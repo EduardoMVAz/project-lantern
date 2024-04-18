@@ -1,14 +1,19 @@
-# project-lantern
+# Skelly's Adventure
 
 ## Menu Item Changes SFX
 
-Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=82327">Pixabay</a>
+Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=44930">Pixabay</a>
 
-## Menu Confirm (Original)
+## Main Menu Confirm (Original)
 
-Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=94937">Pixabay</a>
+Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=71787">Pixabay</a>
 
 ## Menu Background Music (Original)
 
-Music by <a href="https://pixabay.com/pt/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=163557">UNIVERSFIELD</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=163557">Pixabay</a>
+Misty Bog
+    - found on: https://soundimage.org/fantasywonder/
+
+## Stage Menu Change Item SFX
+
+Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=99756">Pixabay</a>
 
