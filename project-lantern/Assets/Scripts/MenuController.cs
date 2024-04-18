@@ -33,27 +33,24 @@ public class MenuController : MonoBehaviour
     }
 
     public void NewPlay() {
-        selectSound.Stop();
-        pressSound.Play();
-        Debug.Log("awawawawa");
         for (int i = 0; i <= 10; i++) {
             string levelName = "Level " + i.ToString();
             PlayerPrefs.SetInt(levelName, 0);
-            Debug.Log(levelName);
+            // Debug.Log(levelName);
         }
-        Wait(1);
-        SceneManager.LoadScene(start_scene);
+
+        this.Play();
     }
     public void Play()
     {    
-        selectSound.Stop();
-        pressSound.Play();
-        Wait(1);
+        StartCoroutine(Wait());
         SceneManager.LoadScene(start_scene);
     }
-    public IEnumerator Wait(int n) {
-        yield return new WaitForSeconds(n);
+    public IEnumerator Wait() {
+        pressSound.Play();
+        yield return new WaitWhile (()=> pressSound.isPlaying);
     }
+
     public void Exit()
     {
         Application.Quit();

@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Analytics;
 using UnityEngine.Rendering.Universal;
-using static Unity.Collections.AllocatorManager;
-
 public class LevelLoader : MonoBehaviour
 {
     public Button[] levelButtons;
@@ -16,7 +11,7 @@ public class LevelLoader : MonoBehaviour
 
     private string levelSelected = "locked";
     private Light2D lighty;
-
+    [SerializeField] private AudioSource pressSound;
     void Start()
     {
         lighty = GetComponent<Light2D>();
@@ -36,6 +31,8 @@ public class LevelLoader : MonoBehaviour
     }
 
     void ChangeLevelSelected(string newLevel) {
+        pressSound.Stop();
+        pressSound.Play();
         lighty.enabled = true;
         blocker.SetActive(false);
         levelSelected = newLevel;
