@@ -798,7 +798,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 350, y: 100}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534687729
 MonoBehaviour:
@@ -820,7 +820,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Project Lantern
+  m_text: Skelly's Adventure
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b6375afe9749c344b0ef6bc1761c791, type: 2}
   m_sharedMaterial: {fileID: -6169976907669013184, guid: 0b6375afe9749c344b0ef6bc1761c791, type: 2}
