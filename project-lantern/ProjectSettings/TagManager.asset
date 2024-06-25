@@ -9,6 +9,7 @@ TagManager:
   - kabu
   - extraLight
   - lightBat
+  - kabuLight
   layers:
   - Default
   - TransparentFX
