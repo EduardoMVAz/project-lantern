@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class questBoard : MonoBehaviour
 {   
     public GameObject keyPopup;
-    public GameObject questMenu;
+    public GameObject questMenu; 
     public GameObject player;
     public GameObject firstLevel;
     public GameObject littleSkelly;
