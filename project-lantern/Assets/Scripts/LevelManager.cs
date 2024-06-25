@@ -10,10 +10,11 @@ public class LevelManager : MonoBehaviour
     
     [SerializeField] private int moveAmount;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject backgroundImg;
+    [SerializeField] private GameObject backgroundImgDead;
+    [SerializeField] private GameObject backgroundImgVictory;
+    [SerializeField] private GameObject gotMoreLightImg;
     [SerializeField] private GameObject outOfLightImg;
     [SerializeField] private GameObject lostLightImg;
-    [SerializeField] private GameObject wonText;
     [SerializeField] private Light2D initialLight;
     [SerializeField] private int perfection;
     private float initialLightCountdown = 5.0f;
@@ -71,17 +72,20 @@ public class LevelManager : MonoBehaviour
         transitionTime -= Time.deltaTime;
         if (cause.Equals("enemy")) {
             lostLightImg.SetActive(true);
-            backgroundImg.SetActive(true);
+            backgroundImgDead.SetActive(true);
         } else if (cause.Equals("light")) {
             outOfLightImg.SetActive(true);
-            backgroundImg.SetActive(true);
+            backgroundImgDead.SetActive(true);
         }
         if (transitionTime < 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void ManageVictory() {
         transitionTime -= Time.deltaTime;
-        wonText.SetActive(true);
+
+        gotMoreLightImg.SetActive(true);
+        backgroundImgVictory.SetActive(true);
+
         if (player.GetComponent<PlayerController>().GetMoveAmount() >= perfection) {
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 2); // perfection!
         } else if (PlayerPrefs.GetInt(SceneManager.GetActiveScene().name, 0) <= 1) {

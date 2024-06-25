@@ -41,9 +41,10 @@ public class questBoard : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(null);
             }
             if (Input.GetButtonDown("Horizontal")) {
-                selectSound.Play();
+                if (menuOpen) {
+                    selectSound.Play();
+                }
             }
-            
             if (EventSystem.current.currentSelectedGameObject != null) {
                 littleSkelly.transform.position = EventSystem.current.currentSelectedGameObject.transform.position;
             }

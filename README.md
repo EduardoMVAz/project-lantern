@@ -1,4 +1,4 @@
-# project-lantern
+# Skelly's Adventure
 
 ## Menu Item Changes SFX
 
